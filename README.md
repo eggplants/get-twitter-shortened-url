@@ -39,10 +39,17 @@ optional arguments:
   -V, --version         show program's version number and exit
 ```
 
-```
+```bash
+$ cat ~/.twitter.key
+CONSUMER_KEY=xxxxxxxxxxxxxxxxxxx
+CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 $ t_co https://google.co.jp 'https://www.youtube.com/watch?v=-8OqFcLyA8o'
 https://google.co.jp => https://t.co/cpMOvCJCDU
 https://www.youtube.com/watch?v=-8OqFcLyA8o => https://t.co/pTZgns1Fas
+
 $ t_co 突うずるっ.com
 突うずるっ.com => https://t.co/5Z1CN94Hrb
 ```
@@ -53,7 +60,6 @@ $ t_co 突うずるっ.com
 import t_co
 CK, CS, AT, AS = '...', '...', '...', '...'
 t = t_co.Converter(CK, CS, AT, AS)
-
 t.shorten('https://google.co.jp')
 # => [{ 'url':          'https://t.co/cpMOvCJCDU',
 #       'expanded_url': 'https://google.co.jp/',
@@ -70,6 +76,8 @@ t.shorten(['https://google.co.jp', 'https://www.youtube.com/watch?v=-8OqFcLyA8o'
 #       'original_url': 'https://www.youtube.com/watch?v=-8OqFcLyA8o' }]
 ```
 
+### TIPS
+
 - set keys with dotfile for safe
 
 ```python
@@ -77,16 +85,7 @@ from os.path import expanduser, join
 import os
 from dotenv import load_dotenv
 
-"""
-# ~/.twitter.key:
-
-CONSUMER_KEY=xxxxxxxxxxxxxxxxxxx
-CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-"""
 load_dotenv(join(expanduser("~") + '.twitter.key'))
-
 CK, CS, AT, AS = [os.environ.get(_)
                   for _ in (
                     'CONSUMER_KEY', 'CONSUMER_SECRET',
