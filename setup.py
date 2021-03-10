@@ -1,9 +1,8 @@
 from setuptools import find_packages, setup
-
-from t_co import __version__
+from t-co import __version__
 
 setup(
-    name='t_co',
+    name='t-co',
     version=__version__,
     description='Get shortened link from Twitter URL Shortener (t.co)',
     description_content_type='',
@@ -18,7 +17,7 @@ setup(
     install_requires=open('requirements.txt').read().splitlines(),
     entry_points={
         'console_scripts': [
-            't_co=t_co.main:main'
+            't-co=t-co.main:main'
         ]
     },
     classifiers=[
