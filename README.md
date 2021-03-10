@@ -1,5 +1,12 @@
 # get-twitter-shortened-url (`t_co`)
 
+[![Release Package](https://github.com/eggplants/get-twitter-shortened-url/actions/workflows/release.yml/badge.svg)](https://github.com/eggplants/get-twitter-shortened-url/actions/workflows/release.yml) [![Test and Report CC](https://github.com/eggplants/get-twitter-shortened-url/actions/workflows/test.yml/badge.svg)](https://github.com/eggplants/get-twitter-shortened-url/actions/workflows/test.yml)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/b48c32d3b82a3cdd641e/maintainability)](https://codeclimate.com/github/eggplants/get-twitter-shortened-url/maintainability)
+
+[![PyPI version](https://badge.fury.io/py/get-twitter-shortened-url.svg)](https://badge.fury.io/py/get-twitter-shortened-url)
+
+
 ## `t_co` is…
 
 - Get shortened link(s) from [Twitter URL Shortener](https://help.twitter.com/en/using-twitter/url-shortener) ([t.co](https://t.co/))
