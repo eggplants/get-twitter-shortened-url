@@ -32,6 +32,8 @@ class Shortener:
         return url_normalize(url_p.geturl())
 
     def shorten(self, url):
+        if type(url) is str:
+            raise TypeError('url must be List[str]')
         urls = []
         urls.extend(url)
         normalized_urls = [self._url_to_idn(_) for _ in urls]

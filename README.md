@@ -60,7 +60,7 @@ $ t_co 突うずるっ.com
 import t_co
 CK, CS, AT, AS = '...', '...', '...', '...'
 t = t_co.Converter(CK, CS, AT, AS)
-t.shorten('https://google.co.jp')
+t.shorten(['https://google.co.jp'])
 # => [{ 'url':          'https://t.co/cpMOvCJCDU',
 #       'expanded_url': 'https://google.co.jp/',
 #       'display_url':  'google.co.jp',
@@ -85,7 +85,7 @@ from os.path import expanduser, join
 import os
 from dotenv import load_dotenv
 
-load_dotenv(join(expanduser("~") + '.twitter.key'))
+load_dotenv(join(expanduser("~"), '.twitter.key'))
 CK, CS, AT, AS = [os.environ.get(_)
                   for _ in (
                     'CONSUMER_KEY', 'CONSUMER_SECRET',
@@ -99,6 +99,14 @@ $ export CONSUMER_KEY=xxxxxxxxxxxxxxxxxxx
 $ export CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 $ export ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 $ export ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+## Development
+
+- local test
+
+```bash
+$ act -P ubuntu-latest=nektos/act-environments-ubuntu:18.04 --secret-file ~/.twitter.key
 ```
 
 ## LISENCE
