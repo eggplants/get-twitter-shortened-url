@@ -6,7 +6,6 @@ import sys
 from os.path import expanduser, isfile, join
 
 from dotenv import load_dotenv
-
 from t_co import __version__
 from t_co.shortener import Shortener
 

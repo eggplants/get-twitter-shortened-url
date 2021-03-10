@@ -1,6 +1,6 @@
-# get-twitter-shortened-url (`t-co`)
+# get-twitter-shortened-url (`t_co`)
 
-## `t-co` is…
+## `t_co` is…
 
 - Get shortened link from [Twitter URL Shortener](https://help.twitter.com/en/using-twitter/url-shortener) ([t.co](https://t.co/))
 - Available on package & CLI
@@ -8,7 +8,7 @@
 ## Install
 
 ```bash
-$ pip install t-co
+$ pip install get-twitter-shortened-url
 ```
 
 ## Usage
@@ -16,8 +16,8 @@ $ pip install t-co
 ### from CLI
 
 ```text
-$ t-co -h
-usage: t-co [-h] [-k key path] [--CK consumer key] [--CS consumer key secret]
+$ t_co -h
+usage: t_co [-h] [-k key path] [--CK consumer key] [--CS consumer key secret]
             [--AT accress token] [--AS access token secret] [-V]
             url [url ...]
 
@@ -46,20 +46,20 @@ CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-$ t-co https://google.co.jp 'https://www.youtube.com/watch?v=-8OqFcLyA8o'
+$ t_co https://google.co.jp 'https://www.youtube.com/watch?v=-8OqFcLyA8o'
 https://google.co.jp => https://t.co/cpMOvCJCDU
 https://www.youtube.com/watch?v=-8OqFcLyA8o => https://t.co/pTZgns1Fas
 
-$ t-co 突うずるっ.com
+$ t_co 突うずるっ.com
 突うずるっ.com => https://t.co/5Z1CN94Hrb
 ```
 
 ### from package
 
 ```python
-import t-co
+import t_co
 CK, CS, AT, AS = '...', '...', '...', '...'
-t = t-co.Converter(CK, CS, AT, AS)
+t = t_co.Converter(CK, CS, AT, AS)
 t.shorten('https://google.co.jp')
 # => [{ 'url':          'https://t.co/cpMOvCJCDU',
 #       'expanded_url': 'https://google.co.jp/',
