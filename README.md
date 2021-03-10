@@ -2,7 +2,7 @@
 
 ## `t_co` is…
 
-- Get shortened link from [Twitter URL Shortener](https://help.twitter.com/en/using-twitter/url-shortener) ([t.co](https://t.co/))
+- Get shortened link(s) from [Twitter URL Shortener](https://help.twitter.com/en/using-twitter/url-shortener) ([t.co](https://t.co/))
 - Available on package & CLI
 
 ## Install
@@ -78,7 +78,7 @@ t.shorten(['https://google.co.jp', 'https://www.youtube.com/watch?v=-8OqFcLyA8o'
 
 ### TIPS
 
-- set keys with dotfile for safe
+- Set the key using dotfile for security
 
 ```python
 from os.path import expanduser, join
@@ -92,7 +92,7 @@ CK, CS, AT, AS = [os.environ.get(_)
                     'ACCESS_TOKEN', 'ACCESS_TOKEN_SECRET')]
 ```
 
-- or, set keys on Terminal
+- Set keys on Terminal
 
 ```bash
 $ export CONSUMER_KEY=xxxxxxxxxxxxxxxxxxx
