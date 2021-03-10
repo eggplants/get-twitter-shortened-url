@@ -106,6 +106,12 @@ $ export ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - local test
 
 ```bash
+$ pytest -vv
+```
+
+- local CI test
+
+```bash
 $ act -P ubuntu-latest=nektos/act-environments-ubuntu:18.04 --secret-file ~/.twitter.key
 ```
 
