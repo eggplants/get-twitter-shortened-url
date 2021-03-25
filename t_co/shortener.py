@@ -22,7 +22,8 @@ class Shortener:
         api = tweepy.API(auth, wait_on_rate_limit=True)
         return api
 
-    def _url_to_idn(self, url):
+    @staticmethod
+    def url_to_idn(url):
         url_p = urlparse(url)
         if url_p.scheme == '':
             url_p._replace(scheme='http')
@@ -36,7 +37,7 @@ class Shortener:
             raise TypeError('url must be List[str]')
         urls = []
         urls.extend(url)
-        normalized_urls = [self._url_to_idn(_) for _ in urls]
+        normalized_urls = [self.url_to_idn(_) for _ in urls]
         link_text = '\n'.join(normalized_urls)
         own_id = self.tweepy_api.me().id
         sent_dm = self.tweepy_api.send_direct_message(own_id, text=link_text)
